@@ -7,6 +7,7 @@ blocks.forEach((block) => {
 	});
 });
 
+// stupid way of doing this. Just show hide a block and innerHTML it
 const openPreviewModal = (blockid) => {
 	removeModals();
 
@@ -30,7 +31,7 @@ const openPreviewModal = (blockid) => {
 };
 
 const openPayModal = async (blockid) => {
-	let response = await fetch("create-paymentintent.php");
+	let response = await fetch("stripe-create-paymentintent.php");
 	if (!response.ok) {
 		throw new Error(`HTTP error! status: ${response.status}`);
 	}
@@ -69,7 +70,7 @@ const openPayModal = async (blockid) => {
 
 const initPayment = async (paymentClientSecret, paymentIntentKey, elements, blockid) => {
 
-	requestURI = "update-paymentintent.php";
+	requestURI = "stripe-update-paymentintent.php";
 	const customer = new Object();
 	const customerFields = document.querySelectorAll(".customer-fields input");
 	customerFields.forEach((field) => {
@@ -126,7 +127,7 @@ const stripeWebhookFile = async (blockid) => {
 		statusMessage('payment', '', '.');
 		attempts++;
 		// need to handle 404 better
-		if (response.ok && response.crossmint_mint_id != '') { // last minute bodgy fix not working
+		if (response.ok && response.crossmint_mint_id != '') { // last minute bodgy fix
 			return resolve(response);
 		} else if (maxAttempts && attempts === maxAttempts) {
 			return reject(new Error('Exceeded max attempts'));
@@ -185,7 +186,7 @@ const checkNFT = async (crossmint_mint_id) => {
 
 const createPoster = async (blockid) => {
 	statusMessage('print', '', 'Print request started');
-	const requestURI = 'order-poster.php?';
+	const requestURI = 'printful-order-poster.php?';
 	// TODO include client secret or something for security
 	let response = await fetch(requestURI + new URLSearchParams({
 		nftid: blockid
@@ -228,10 +229,10 @@ const removeModals = () => {
 	const modals = document.querySelectorAll(".modal");
 	modals.forEach((modal) => {
 		modal.remove();
-		document.querySelector(".modal-background").remove(); // bit ugly 
+		document.querySelector(".modal-background").remove(); // bit ugly here
 	});
 }
 
 const stripe = Stripe(
-	"pk_test_key_here"
+	"pk_test_abc"
 );
