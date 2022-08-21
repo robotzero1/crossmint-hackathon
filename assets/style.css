@@ -1,0 +1,162 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: grid;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: Kirlian;
+    src: url("Kirlian-Bold.otf");
+}
+
+body,
+p,
+button {
+    font-family: "Kirlian";
+    font-weight: bold;
+    font-style: normal;
+}
+
+label {
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    margin: 6px 0 13px 0;
+}
+
+input {
+    padding: 10px 13px;
+    background: white;
+    border-radius: 6px;
+    width: 80%;
+    border: 1px solid darkgray;
+    margin: 4px 0;
+}
+
+button {
+    background: #112d2c;
+    border: 0;
+    padding: 7px 14px;
+    border-radius: 4%;
+    color: white;
+    margin: 10px 10px 10px 0;
+    font-size: 0.8rem;
+}
+
+.header {
+    max-width: 1400px;
+}
+
+.modal-background {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(217, 129, 129, 0.5);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    max-width: 1400px;
+}
+.grid-item {
+    font-size: 30px;
+    text-align: center;
+}
+.grid-item > img {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out;
+}
+.grid-item > img:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    position: fixed;
+    background: white;
+    top: calc(50% - 265px);
+    right: calc(50% - 500px);
+    height: 530px;
+    width: 1000px;
+}
+
+.modal-preview {
+    display: grid;
+    grid-template-columns: 1fr 50px 1fr;
+    padding: 20px;
+    column-gap: 25px;
+    z-index: 2;
+}
+
+.preview-poster {
+    display: grid;
+    justify-items: center;
+    font-size: 1.5rem;
+    color: #112d2c;
+}
+.preview-poster > img {
+    width: 60%;
+    border: 1px solid #d8dcdc;
+    padding: 7px;
+}
+.preview-plus {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 6.4rem;
+    color: #112d2c;
+}
+.preview-nft {
+    display: grid;
+    justify-items: center;
+    font-size: 1.5rem;
+    color: #112d2c;
+}
+.preview-nft > img {
+    width: 300px;
+    border: 1px solid #d8dcdc;
+    padding: 11px;
+}
+.preview-nft > p {
+    font-size: 0.9rem;
+}
+
+.modal-pay {
+    display: grid;
+    grid-template-columns: 200px auto auto;
+    column-gap: 25px;
+    padding: 20px;
+    z-index: 3;
+}
+
+.customer-fields > p {
+    font-size: 0.7rem;
+}
+
+.status {
+    position: absolute;
+    bottom: 30px;
+}
+
+.status-payment > div {
+    height: 35px;
+    font-size: 0.7rem;
+}
+.status-mint > div {
+    height: 35px;
+    font-size: 0.7rem;
+}
+.status-print > div {
+    height: 35px;
+    font-size: 0.7rem;
+}
