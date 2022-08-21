@@ -17,7 +17,7 @@ Demo card is 4242 4242 4242 4242 04/24 424
 2)	Stripe processes the order. When complete Stripe sends a webhook to the server containing the order details
 3)	Server webhook page creates a file containing the order data
 4)	Web page polls for the existence of this file
-5)	When the web page detects this file it starts the minting and print via APIs  using the content of this file
+5)	When the web page detects this file it simultaneously starts minting and print order process via APIs using the content of this file
 6)	Printful API responds when print job is accepted
 7)	Crossmint API responds mint in progress
 8)	Web page polls for mint complete via ID received in step 7
