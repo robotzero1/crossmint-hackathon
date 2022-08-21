@@ -52,6 +52,10 @@ button {
     max-width: 1400px;
 }
 
+.header > img {
+    width: 100%;
+}
+
 .modal-background {
     position: fixed;
     z-index: 1;
