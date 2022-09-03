@@ -6,7 +6,7 @@ The project combines the APIs of Stripe, Crossmint and Printful to buy an NFT an
 
 ![image](https://user-images.githubusercontent.com/60509953/185814159-cab1206e-450d-4d28-93be-e3ceac45daa4.png)
 
-There is an occasional bug with the Stripe payment. Sometimes the mint/print process starts prematurely. A video of the process functioning correctly can be seen here:  https://streamable.com/huczpc
+A video of the process can be seen here:  https://streamable.com/huczpc
 
 Demo site - https://robot.moda/
 Demo card is 4242 4242 4242 4242 04/24 424
