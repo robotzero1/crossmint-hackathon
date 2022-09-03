@@ -7,7 +7,6 @@ blocks.forEach((block) => {
 	});
 });
 
-// stupid way of doing this. Just show hide a block and innerHTML it
 const openPreviewModal = (blockid) => {
 	removeModals();
 
@@ -127,7 +126,7 @@ const stripeWebhookFile = async (blockid) => {
 		statusMessage('payment', '', '.');
 		attempts++;
 		// need to handle 404 better
-		if (response.ok && response.crossmint_mint_id != '') { // last minute bodgy fix
+		if (response.ok) {
 			return resolve(response);
 		} else if (maxAttempts && attempts === maxAttempts) {
 			return reject(new Error('Exceeded max attempts'));
