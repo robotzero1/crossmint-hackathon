@@ -30,8 +30,8 @@ There are a few things that didn’t make this release but I’ll add them when 
 ~~•	Show 'minted' on mouseover each block for minted items and prevent selection~~  
 •	Switch to idempotency version with JS check before mint attempt  
 •	Clean up the code  
-~~•	Prettier modal launch ~~ 
-~~•	Close second modal  ~~
+~~•	Prettier modal launch~~ 
+~~•	Close second modal ~~
 •	Moar APIs https://www.smarty.com/ address validation  
 
 ## Credits
