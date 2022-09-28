@@ -8,7 +8,7 @@ The project combines the APIs of Stripe, Crossmint and Printful to buy an NFT an
 
 A video of the process can be seen here:  https://streamable.com/huczpc
 
-Demo site - https://robot.moda/
+Demo site (more recent code that this repo) - https://robot.moda/  
 Demo card is 4242 4242 4242 4242 04/24 424
 
 ## Purchase flow
